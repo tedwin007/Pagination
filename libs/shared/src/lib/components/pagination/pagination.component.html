@@ -1,0 +1,21 @@
+<nav *ngIf="totalPages">
+  <ul class="pagination">
+    <li class="page-item navPageBtn" [ngClass]="{disabled:currentPage === 1}">
+      <a class="page-link " (click)="previousPage()"> &laquo; </a>
+    </li>
+
+    <div class="pagination-pages" *ngIf="totalPages | asPages:currentPage:10 as pagesList">
+      <li class="page-item"
+          [class.active]="page | isCurrentPage: currentPage"
+          *ngFor="let page of pagesList">
+        <a class="page-link" (click)="setCurrentPage(page)">{{ page }}</a>
+      </li>
+    </div>
+
+    <li class="page-item navPageBtn" [ngClass]="{disabled:!(currentPage | hasNextPage: totalPages)}">
+      <a class="page-link" (click)="nextPage()"> &raquo; </a>
+    </li>
+  </ul>
+</nav>
+
+

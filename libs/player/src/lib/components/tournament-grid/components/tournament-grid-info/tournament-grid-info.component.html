@@ -1,0 +1,25 @@
+<div *ngIf="!!currentPage && itemsPerPage ">
+  <span class="badge badge-secondary">
+    items {{(currentPage - 1) * itemsPerPage}} - {{(currentPage - 1) * itemsPerPage + itemsPerPage}}
+  </span>
+  <span class="badge badge-secondary"> total {{total}} items </span>
+  <span class="badge badge-secondary"> total {{getTotalPages()}} pages </span>
+  <span class="badge badge-secondary">items per page
+      <input type="number" min="1"
+             max="{{itemsPerPage}}"
+             class="items-per-page-input"
+             [ngModel]="itemsPerPage"
+             (ngModelChange)="itemPerPageChange.emit($event)">
+  </span>
+
+  <span class="badge badge-secondary">Jump to page
+      <input type="number"
+             min="1"
+             max="{{itemsPerPage}}"
+             class="items-per-page-input"
+             #JumpToPageElement
+             (input)="jumpToPage(JumpToPageElement.value)">
+  </span>
+</div>
+
+

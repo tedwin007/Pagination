@@ -1,0 +1,17 @@
+:host {
+  height: 100%;
+  width: 100%;
+  grid-template-rows: auto 40px 50px;
+  grid-row-gap: 15px;
+  display: grid;
+
+  ::ng-deep {
+    .suspected {
+      color: red;
+    }
+  }
+
+  #paginator {
+    width: 100%;
+  }
+}

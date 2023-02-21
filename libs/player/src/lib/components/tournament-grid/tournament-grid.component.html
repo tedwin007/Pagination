@@ -1,0 +1,22 @@
+<ng-container *ngIf="players && currentPage && suspects && total>=0 ">
+
+  <tw-player-grid-view [rowData]="players | toGridPlayer:suspects"
+                       [filters]="filters"
+                       (onFilterChange)="gridFilterChange.emit($event)">
+  </tw-player-grid-view>
+
+  <tw-tournament-grid-info [currentPage]="currentPage"
+                           [itemsPerPage]="itemsPerPage"
+                           [total]="total"
+                           (itemPerPageChange)="itemPerPageChange.emit($event)"
+                           (jumpToPageChanged)="jumpToPageChange.emit($event)">
+  </tw-tournament-grid-info>
+
+  <shared-pagination id="paginator"
+                     [currentPage]="currentPage"
+                     (pageChange)="currentPageChange.emit($event)"
+                     [totalItems]="total"
+                     [itemsPerPage]="itemsPerPage">
+  </shared-pagination>
+
+</ng-container>

@@ -1,0 +1,14 @@
+@import "styles/color-palette";
+@import "~bootstrap/scss/bootstrap";
+@import "~ngx-bootstrap/datepicker/bs-datepicker";
+
+html,
+body {
+  height: 100%;
+  display: block;
+}
+
+body {
+  background: rgb(2, 0, 36);
+  background: linear-gradient(170deg, rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 9%, rgba(0, 212, 255, 1) 100%);
+}

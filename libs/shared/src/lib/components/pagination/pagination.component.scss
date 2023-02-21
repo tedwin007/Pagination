@@ -1,0 +1,43 @@
+:host {
+  display: block;
+}
+
+nav {
+  width: inherit;
+}
+
+.pagination {
+  display: grid;
+  position: relative;
+  grid-template-columns: auto auto 50px;
+  list-style: none;
+  justify-content: space-around;
+  overflow: hidden;
+
+  &-pages {
+    overflow: auto;
+    max-width: 720px;
+    display: flex;
+  }
+
+  .active {
+    font-weight: 800;
+
+    &:hover {
+      cursor: default !important;
+    }
+  }
+}
+
+.page {
+  &-link {
+    color: #007bff;
+  }
+
+  &-item {
+    display: inline-block;
+    align-items: center;
+    padding: 0.5rem;
+    cursor: pointer;
+  }
+}

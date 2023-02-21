@@ -1,0 +1,91 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "",
+    "version": "1",
+    "title": "Angular-API"
+  },
+  "host": "localhost:20000",
+  "basePath": "/api/v1/",
+  "tags": [
+    {
+      "name": "Public"
+    },
+    {
+      "name": "Private"
+    }
+  ],
+  "schemes": [
+    "https"
+  ],
+  "paths": {
+    "/players": {
+      "get": {
+        "tags": [
+          "Public"
+        ],
+        "summary": "GetPlayers",
+        "parameters": [
+          {
+            "name": "start",
+            "required": true,
+            "type": "integer",
+            "in": "query"
+          },
+          {
+            "name": "n",
+            "required": true,
+            "type": "integer",
+            "in": "query"
+          },
+          {
+            "name": "level",
+            "type": "string",
+            "enum": [
+              "rookie",
+              "pro"
+            ],
+            "in": "query"
+          },
+          {
+            "name": "score",
+            "type": "integer",
+            "in": "query"
+          },
+          {
+            "name": "search",
+            "type": "string",
+            "in": "query"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Great"
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "Player": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "text"
+        },
+        "level": {
+          "type": "text",
+          "enum": [
+            "rookie",
+            "pro"
+          ]
+        },
+        "score": {
+          "type": "number",
+          "maximum": 150,
+          "minimum": 0
+        }
+      }
+    }
+  }
+}

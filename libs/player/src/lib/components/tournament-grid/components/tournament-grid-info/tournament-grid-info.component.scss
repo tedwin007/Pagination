@@ -1,0 +1,18 @@
+:host {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  width: 100%;
+  justify-content: space-between;
+
+  .badge {
+    margin-left: 5px;
+  }
+
+  .items-per-page-input {
+    background: transparent;
+    color: white;
+    border: 0;
+    text-align: center;
+  }
+}
+

@@ -1,14 +1,25 @@
-[WIP]
-# Generate a domain feature, with one line
-* deps: a valid swagger.json file
+###[WIP]
+### Generate & Configure full Feature, with one line
+#### *deps: a valid swagger.json file
 
 ####CMD:
 
-node node_modules/@nrwl/cli/bin/nx.js workspace-schematic feature-generator
+nx workspace-generator feature-generator <FeatureName> <ItemName>
+
+OR
+
+node node_modules/@nrwl/cli/bin/nx.js workspace-schematic feature-generator --name=store --singleItemName=product
 
 
-## Example 
-![Alt Text](tw/example-4.gif)
+To-Do:
+- make generators names more friendly
+- make them more modular
+- learn more on "executors & builders"
+
+  (https://nx.dev/l/a/executors/using-builders#using-executors--builders)
+
+#### Example 
+![Alt Text](example-4.gif)
 
 
 ---
