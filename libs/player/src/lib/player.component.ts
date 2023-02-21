@@ -62,8 +62,7 @@ export class PlayerComponent implements OnInit {
       })
       this.itemsPerPage = value;
       this.updatePagination({currentPage: 1, itemsPerPage: value})
-
-    }
+     }
     }
 
     gridFilterChange(filterBy: GridFilterChangeParams) {
@@ -75,7 +74,7 @@ export class PlayerComponent implements OnInit {
       this.updatePagination({currentPage: 1})
     }
 
-    pageChange(currentPage:number) :void {
+    pageChange(currentPage:number) : void {
       this.playerService.fetchPlayers({
         n: this.itemsPerPage,
         start: (currentPage - 1) * this.itemsPerPage,
@@ -83,7 +82,7 @@ export class PlayerComponent implements OnInit {
       this.updatePagination({currentPage})
     }
 
-    updatePagination(params :Partial<PaginationState>): void {
+    updatePagination(params: Partial<PaginationState>): void {
       this.paginationService.setState(params)
     }
   }
