@@ -45,7 +45,7 @@ export class PlayerComponent implements OnInit {
   constructor(private playerService: PlayerService,
               private filtersService: FiltersMangerService,
               private paginationService: PaginationService) {
-
+ 
   }
 
   ngOnInit(): void {
